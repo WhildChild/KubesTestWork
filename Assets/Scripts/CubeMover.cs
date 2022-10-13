@@ -10,8 +10,8 @@ public class CubeMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.x < Distance)
-            transform.Translate(new Vector3(Speed/10f,0,0));
+        if (transform.localPosition.x < Distance)
+            transform.Translate(Speed*Time.fixedDeltaTime,0,0);
         else { this.gameObject.SetActive(false); }
     }
 }

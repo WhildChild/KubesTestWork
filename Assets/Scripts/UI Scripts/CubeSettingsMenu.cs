@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -55,7 +56,7 @@ public class CubeSettingsMenu : MonoBehaviour
     //В этом случае разделение оправдано.
     private float GetSpeedFromTextField()
     {
-        float.TryParse(speedTextField.text, out float result);
+        float.TryParse(speedTextField.text, NumberStyles.Any, CultureInfo.InvariantCulture, out float result);
         if (result <=0) 
         {
             result = StandartSpeed;
@@ -66,7 +67,7 @@ public class CubeSettingsMenu : MonoBehaviour
 
     private float GetDistanceFromTextField()
     {
-        float.TryParse(distanceTextField.text, out float result);
+        float.TryParse(distanceTextField.text, NumberStyles.Any, CultureInfo.InvariantCulture, out float result);
         if (result <= 0f)
         {
             result = StandartDistance;
@@ -77,7 +78,7 @@ public class CubeSettingsMenu : MonoBehaviour
 
     private float GetTimeToSpawnFromTextField()
     {
-        float.TryParse(timeToSpawnTextField.text, out float result);
+        float.TryParse(timeToSpawnTextField.text, NumberStyles.Any, CultureInfo.InvariantCulture, out float result);
         if (result <= 0f)
         {
             result = StandartTimeToSpawn;
